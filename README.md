@@ -125,6 +125,10 @@ Este proyecto corresponde a un prototipo académico.
 - La forma en que el Manager reparte el trabajo depende del modelo y puede variar entre ejecuciones.
 - En los casos B, C y E la respuesta final quedó cortada por el límite de 800 tokens de salida del Manager; las órdenes y los correos sí quedaron completos. Se corrige subiendo el límite a 900 tokens (Groq gratis no acepta más de 1.000 tokens de salida por minuto) y pidiendo respuestas de máximo 350 palabras.
 
+## Uso de inteligencia artificial
+
+Se utilizó Claude (Anthropic) como apoyo para la base del código del notebook, la revisión de errores, los diagramas y la estructura del README y de este informe. [Indicar cómo lo revisó y validó el equipo.] Las pruebas citadas corresponden a las salidas guardadas de la ejecución en Colab.
+
 ## Referencias
 
 - CrewAI. (2026). *CrewAI documentation*. https://docs.crewai.com/
