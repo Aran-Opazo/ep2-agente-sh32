@@ -127,7 +127,7 @@ Este proyecto corresponde a un prototipo académico.
 
 ## Uso de inteligencia artificial
 
-Se utilizó Claude (Anthropic) como apoyo para la base del código del notebook, la revisión de errores, los diagramas y la estructura del README y de este informe. [Indicar cómo lo revisó y validó el equipo.] Las pruebas citadas corresponden a las salidas guardadas de la ejecución en Colab.
+Se utilizó Claude (Anthropic) como apoyo para la base del código del notebook, la revisión de errores, los diagramas y la estructura del README y del informe. Las pruebas citadas corresponden a las salidas guardadas de la ejecución en Colab.
 
 ## Referencias
 
