@@ -1,0 +1,10 @@
+prueba,resultado
+Stock de TR2 disponible,OK
+Código inexistente informa los válidos,OK
+Luz de transferencia en tierra = MEDIA,OK
+La misma falla en vuelo sube a ALTA,OK
+El agente propone MEDIA en vuelo y queda ALTA,OK
+OT ALTA queda pendiente de aprobación,OK
+Idempotencia: no duplica la OT,OK
+"Sin stock, la OT queda en espera",OK
+Una pregunta (no reporte) no puede crear OT,OK

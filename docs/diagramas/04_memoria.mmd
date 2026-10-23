@@ -1,0 +1,13 @@
+flowchart TB
+    subgraph S1[Sesión 1 · turno de día]
+        T1[Escenarios A–E] --> CP1[(Corto plazo<br/>ventana 6 turnos)]
+        CP1 -->|historial| M1[Manager]
+    end
+    subgraph S2[Sesión 2 · turno de noche]
+        T2[Escenario F] --> CP2[(Corto plazo<br/>vacía)]
+        CP2 -->|sin historial| M2[Manager]
+    end
+    M1 -->|crear_orden_trabajo registra la OT| LP[(Largo plazo<br/>FAISS + episodios.jsonl<br/>persistente)]
+    LP -->|búsqueda semántica automática| M1
+    LP -->|recupera la OT del TR2| M2
+    MAN[(Conocimiento<br/>FAISS del manual)] -->|buscar_manual del Diagnosticador · umbral| M1

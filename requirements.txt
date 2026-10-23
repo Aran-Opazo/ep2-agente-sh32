@@ -1,0 +1,13 @@
+# Agente SH-32 (IA agéntica jerárquica)
+# Mismas versiones que instala la primera celda del notebook. Requiere Python >=3.10 y <3.14.
+crewai==1.6.1
+litellm==1.106.2
+langchain-community==0.3.27
+langchain-text-splitters==0.3.11
+langchain-huggingface==0.3.1
+faiss-cpu==1.15.1
+pdfplumber==0.11.10
+sentence-transformers
+pandas
+python-dotenv
+jupyter

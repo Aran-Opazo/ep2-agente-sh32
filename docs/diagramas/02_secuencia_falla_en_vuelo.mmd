@@ -1,0 +1,26 @@
+sequenceDiagram
+    autonumber
+    actor T as Técnico
+    participant S as SistemaJerarquico
+    participant M as Manager (Jefe de Taller)
+    participant D as Diagnosticador
+    participant P as Planificador
+    participant C as Coordinador
+    participant G as Compuerta + Auditoría
+    actor SV as Supervisión
+    T->>S: "Luz de transferencia red 1 EN VUELO, SH-32-02"
+    S->>M: solicitud + memoria corto plazo + casos similares
+    M->>D: delega diagnóstico (aeronave, en vuelo, 49P)
+    D-->>M: buscar_manual + buscar_historial_fallas → sistema y páginas
+    M->>P: delega criticidad y stock
+    P-->>M: evaluar_criticidad("en vuelo") = ALTA · consultar_stock(49P) = hay
+    M->>C: delega registro y avisos
+    C->>G: crear_orden_trabajo(criticidad propuesta)
+    G-->>C: final = máx(propuesta, reglas) → PENDIENTE_APROBACION_SUPERVISOR
+    alt el Coordinador avisó a supervisión
+        C->>SV: correo de aprobación
+    else no avisó
+        G->>SV: correo [Auditoría] aprobación requerida
+    end
+    M-->>S: Diagnóstico · Decisiones · Próximos pasos · Fuentes
+    S-->>T: respuesta + traza JSONL

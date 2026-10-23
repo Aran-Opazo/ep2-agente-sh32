@@ -1,0 +1,12 @@
+flowchart LR
+    S([Solicitud]) --> M{Manager<br/>¿qué tipo es?}
+    M -->|reporte de falla| R[Diagnosticador → Planificador → Coordinador]
+    M -->|tema ajeno| X[Declina sin delegar]
+    M -->|seguimiento| F[Responde con la memoria<br/>sin crear OT]
+    R --> C1{criticidad y stock}
+    C1 -->|"A · MEDIA en tierra, hay stock"| A[OT ABIERTA<br/>sin correos]
+    C1 -->|"B · misma falla EN VUELO"| B[ALTA → PENDIENTE_APROBACION<br/>+ correo supervisión]
+    C1 -->|"C · TR2 sin stock"| C[correo abastecimiento<br/>si queda ALTA, también espera aprobación<br/>y avisa a supervisión]
+    X -->|"D · pregunta sin relación"| D[no crea OT<br/>ni envía correos]
+    F -->|"E · misma sesión"| E[OT del TR2 desde<br/>memoria corto plazo]
+    F -->|"F · sesión nueva"| FF[OT del TR2 desde<br/>memoria largo plazo]

@@ -1,0 +1,22 @@
+flowchart TB
+    U([Persona técnica]) -->|1 solicitud| M
+    CP[(Memoria corto plazo<br/>ventana 6 turnos)] -->|2 historial| M
+    LP[(Memoria largo plazo<br/>FAISS + JSONL)] -->|2 casos similares| M
+    M[["3 MANAGER · Jefe de Taller<br/>Process.hierarchical<br/>planifica · prioriza · delega · revisa"]]
+    M -->|4 delega| D[Técnico Diagnosticador]
+    M -->|4 delega| P[Planificador de Mantenimiento]
+    M -->|4 delega| C[Coordinador de Mantenimiento]
+    D --> Q1[CONSULTA<br/>buscar_manual<br/>RAG con páginas]
+    D --> Q2[CONSULTA<br/>buscar_historial_fallas]
+    P --> R1[RAZONAMIENTO<br/>evaluar_criticidad]
+    P --> Q3[CONSULTA<br/>consultar_stock]
+    C --> W1[ESCRITURA<br/>crear_orden_trabajo]
+    C --> W2[ESCRITURA<br/>enviar_correo]
+    W1 --> G{{5 Compuerta en código<br/>criticidad = máx. agente vs reglas<br/>solo reportes · no duplica<br/>registra la OT en memoria LP}}
+    G -->|ALTA| PA[PENDIENTE_APROBACION<br/>aprueba una persona]
+    G -->|sin stock| EE[EN_ESPERA_REPUESTO]
+    G -->|MEDIA/BAJA con stock| AB[ABIERTA]
+    PA --> AU
+    EE --> AU
+    AB --> AU
+    AU[6 Auditoría de políticas<br/>envía el correo obligatorio faltante] --> TR[(7 Traza JSONL<br/>delegaciones · herramientas · tokens<br/>+ respuesta con fuentes)]

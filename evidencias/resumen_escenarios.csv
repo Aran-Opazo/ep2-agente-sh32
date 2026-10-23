@@ -1,0 +1,6 @@
+escenario,secuencia real,delegaciones,agentes,OT (estado),compuerta ajustó,correos,auditoría,tokens,segundos,error
+A,buscar_manual → buscar_manual → buscar_historial_fallas → buscar_manual → buscar_manual → buscar_manual → buscar_manual → buscar_historial_fallas → evaluar_criticidad → consultar_stock → crear_orden_trabajo,4,Técnico → Planificador → Coordinador,OT-20261023-001 (ABIERTA),-,-,-,17463,394.2,
+B,buscar_manual → buscar_historial_fallas → buscar_historial_fallas → buscar_manual → evaluar_criticidad → consultar_stock → crear_orden_trabajo → enviar_correo,3,Técnico → Planificador → Coordinador,OT-20261023-002 (PENDIENTE_APROBACION_SUPERVISOR),-,supervision.mantenimiento,-,15063,322.4,
+C,buscar_manual → buscar_manual → buscar_manual → buscar_historial_fallas → evaluar_criticidad → consultar_stock → crear_orden_trabajo → enviar_correo → enviar_correo,3,Técnico → Planificador → Coordinador,OT-20261023-003 (PENDIENTE_APROBACION_SUPERVISOR),-,"supervision.mantenimiento, abastecimiento",-,16066,385.0,
+D,-,0,Manager,-,-,-,-,5297,37.7,
+E,-,0,Manager,-,-,-,-,3091,2.6,

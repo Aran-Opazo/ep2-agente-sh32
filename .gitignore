@@ -1,0 +1,12 @@
+.env
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+venv/
+# Datos de ejecución local (las evidencias finales sí se suben, en evidencias/)
+EP2_SH32/
+_prueba_sin_api/
+*.zip
+# El manual es propiedad de ETS ("no part of it shall be reproduced"): no se sube.
+Manual*.pdf
+manuales/
